@@ -13,5 +13,5 @@ def checkFrontBackSame(s, idx):
     
 n = int(input())
 for i in range(n):
-    sentence = input()
+    sentence = input() 
     checkFrontBackSame(sentence, i+1)

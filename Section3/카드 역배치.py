@@ -11,7 +11,7 @@ def changePosition(x, y, arr):
     
         
 numArr = [i for i in range(1,21)]   
-for i in range(10):
+for _ in range(10):
     a, b = map(int, input().split())
     result = changePosition(a, b, numArr)
 
