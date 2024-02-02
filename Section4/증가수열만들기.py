@@ -1,45 +1,38 @@
 import sys
-from collections import deque
 sys.stdin = open("input.txt", "rt")
 
 
-# 증가 수열 길이
+# 증가 수열 길이(1씩 증가할 필요 XXX)
 n = int(input())
 
 # 수열
 arr = list(map(int, input().split()))
-arr = deque(arr)
 
-inc = []
-str = "L"
-s = arr[0]
-res = 0
-while arr:
-    if len(arr) == 1:
-        if inc[-1] + 1 == arr[0]:
-        else:
-            break
-    if s + 1 == arr[1]:
-        inc.append(s)
-        inc.append(arr[1])
-        s = arr[1]
-        arr.popleft()
-        arr.popleft()
-        str += "L"
-    elif s + 1 == arr[-1]:
-        inc.append(s)
-        inc.append(arr[-1])
-        s = arr[-1]
-        arr.pop()
-        arr.popleft()
-        str += "R"
+lt = 0
+rt = n -1
+last = 0
+res = ""
+tmp = []
+
+while lt < rt:
+    if arr[lt] > last :
+        tmp.append((arr[lt], 'L'))
+    if arr[rt] > last :
+        tmp.append((arr[rt], 'R'))
+    tmp.sort()
+    if len(tmp) == 0:
+        break
     else :
-        if len(inc) > 1:
-            res = len(inc)
-            inc = []
-        arr.popleft()
+        res += tmp[0][1]
+        last = tmp[0][0]
+        # 포인터 번경
+        if tmp[0][1] == 'L':
+            lt += 1
+        else :
+            rt -= 1
+    tmp.clear()
 
 
-print(res, str)
+print(res)
         
 
