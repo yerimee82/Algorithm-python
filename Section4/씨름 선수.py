@@ -24,3 +24,6 @@ for h, w in applicant:
         biggest = w
 
 print(cnt)
+
+
+
