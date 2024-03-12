@@ -1,4 +1,5 @@
 import sys
+import pprint
 sys.stdin = open("input.txt", "rt")
 
 n = int(input())
@@ -14,5 +15,8 @@ for i in range(n):
             a[i] -= 1
 
 
-for k in tmp:
-    print(k, end=' ')
+# for k in tmp:
+    # print(k, end=' ')
+    
+
+
